@@ -45,28 +45,30 @@ sendButton.addEventListener("mouseover", () => {
     setTimeout(() => sendButton.classList.remove("shake"), 500);
 });
 
-// Changement de couleur de fond selon la section
-const sections = document.querySelectorAll("section, #contact, #team");
-const body = document.body;
-
-window.addEventListener("scroll", () => {
-    sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-            body.style.backgroundColor = section.getAttribute("data-bg-color") || "#fff";
-        }
-    });
-});
-
 // Animation de la navbar au défilement
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
-        navbar.style.padding = "10px 20px";
+        navbar.style.padding = "20px 20px";
         navbar.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
     } else {
         navbar.style.padding = "15px 20px";
         navbar.style.boxShadow = "none";
     }
+});
+
+// transition pour le chargement de la page
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
+
+// pour le hamburger que j'ai créer
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navbar = document.querySelector('.navbar');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navbar.classList.toggle('active'); 
+    });
 });

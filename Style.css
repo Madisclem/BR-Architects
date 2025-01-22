@@ -2,6 +2,11 @@
 body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+body.loaded {
+    opacity: 1;
 }
 
 /* Navbar */
@@ -10,23 +15,19 @@ body {
     top: 0;
     width: 100%;
     background-color: white;
-    padding: 15px 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
+    transition: padding 0.3s;
 }
 
 .navbar a {
     text-decoration: none;
     color: black;
     font-size: 16px;
-    padding: 0px, 15px;
-    margin: 0 10px;
+    padding: 5px 10px;
+    margin: 0 5px;
     display: inline-block;
-}
-
-.navbar a:hover {
-    background-color: #f1f1f1;
 }
 
 .navbar .logo {
@@ -36,7 +37,58 @@ body {
 
 .navbar .navbar-links {
     float: right;
+    display: flex;
 }
+
+.navbar a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 21px;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 30px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .navbar .navbar-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        z-index: 1000;
+    }
+
+    .navbar .navbar-links a {
+        display: block;
+        padding: 15px 0;
+        border-top: 1px solid #ddd;
+    }
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar.active .navbar-links {
+        display: block;
+    }
+}
+
 /* Style du header */
 header#home {
     position: relative;
@@ -289,4 +341,58 @@ footer a {
     25% { transform: translateX(-5px); }
     50% { transform: translateX(5px); }
     75% { transform: translateX(-5px); }
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .row {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+@media (max-width: 992px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    header#home {
+        height: 80vh; 
+    }
+
+    .header-content h1 {
+        font-size: 24px;
+    }
+
+    .row {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+    .team-member {
+        max-width: 100%; 
+    }
+}
+
+@media (max-width: 576px) {
+    .header-content h1 {
+        font-size: 20px;
+    }
+
+    .card-info h4 {
+        font-size: 18px;
+    }
+
+    .card-info p {
+        font-size: 12px;
+    }
+
+    #contact form input[type="text"],
+    #contact form button {
+        width: 100%; 
+    }
+
+    .overlay {
+        font-size: 14px; 
+    }
 }
