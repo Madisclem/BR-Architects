@@ -1,0 +1,282 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 15px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    letter-spacing: 4px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    padding: 0px, 15px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #f1f1f1;
+}
+
+.navbar .logo {
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+.navbar .navbar-links {
+    float: right;
+}
+/* Style du header */
+header#home {
+    position: relative;
+    width: 100%;
+    height: 120vh; 
+    background-image: url('/img/architect.jpg'); 
+    background-size: cover;
+    background-position: center; 
+}
+
+/* Style header */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    color: white;
+}
+
+.header-content h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.header-content h1 b {
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 12px 18px;
+}
+
+/* Style Pojects */
+#projects {
+    padding: 50px 20px;
+}
+
+#projects h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+
+.col.project {
+    position: relative;
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease; 
+}
+
+.col.project:hover {
+    transform: scale(1.05);
+}
+
+.col.project img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0px; 
+    left: 0px; 
+    background-color: black; 
+    color: white; 
+    font-size: 18px; 
+    padding: 5px;
+
+}
+
+/* Style About */
+#about {
+    padding: 0 30px;
+    font-size: 15px;
+}
+
+#about h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+hr {
+    border: none; 
+    height: 1px;  
+    background-color: #ccc; 
+    margin: 10px 0; 
+}
+
+/* Team Section */
+#team {
+    padding: 60px 20px;
+}
+
+#team p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Row styling */
+#team .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Card styling */
+.team-member {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+/* Team member image */
+.team-member img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Card info */
+.card-info {
+    padding: 20px;
+}
+
+.card-info h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-info .title {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-info button   {
+    padding: 10px 50px;
+    background-color: black;
+    color: white;
+}
+.card-info button:hover {
+    transform: scale(1.05);
+}
+/* Contact Section */
+#contact {
+    padding: 50px 10px; 
+}
+#contact h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: normal;
+    padding: 5px 20px;
+}
+
+#contact p {
+    font-size: 16px; 
+    margin-bottom: 30px; 
+    font-family: 'Arial', sans-serif;
+    padding: 5px 20px;
+}
+
+/* Formulaire */
+#contact form {
+    max-width: 95%;
+    margin: 10px; 
+    text-align: left; 
+}
+
+#contact form input[type="text"] {
+    width: 100%; 
+    padding: 12px 15px;
+    margin-bottom: 20px; 
+    border: 1px solid #ddd; 
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+#contact form input[type="text"]:focus {
+    border-color: black; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+/* Bouton de soumission */
+#contact form button {
+    background-color: black; 
+    color: white; 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    font-family: 'Arial', sans-serif; 
+    display: block; 
+    margin-top: 10px; 
+}
+
+/* Style map */
+.map    {
+    padding: 10px 40px;
+}
+.map img    {
+    width: 100%;
+}
+
+/* Style footer */
+footer  {
+    background-color: black;
+    padding: 25px;
+    color: white;
+    text-align: center;
+}
+footer a {
+    text-decoration: none; 
+    color: inherit;        
+}
